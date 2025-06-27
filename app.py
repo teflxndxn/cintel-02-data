@@ -5,13 +5,16 @@ import palmerpenguins  # This package provides the Palmer Penguins dataset
 
 penguins_df = palmerpenguins.load_penguins()
 
-ui.page_opts(title="Peng data - Blessing", fillable=True)
+ui.page_opts(title="Peng Data - Blessing", fillable=True)
+
 with ui.layout_columns():
 
     @render_plotly
     def plot1():
-        return px.histogram(px.data.tips(), y="tip")
+        # Histogram of species counts
+        return px.histogram(penguins_df, x="species", title="Penguin Species Count")
 
     @render_plotly
     def plot2():
-        return px.histogram(px.data.tips(), y="total_bill")
+        # Histogram of flipper length distribution
+        return px.histogram(penguins_df, x="flipper_length_mm", title="Flipper Length Distribution")
