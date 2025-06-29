@@ -1,3 +1,6 @@
 pandas
 plotly
 palmerpenguins
+shinywidgets
+seaborn
+reactable
